@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitVerse - Your Personalized Fitness Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom gradient background */
+        body {
+            background: linear-gradient(to bottom right,#bfdbfe, #f0f9ff, #ffffff); /* Light blues, slightly shifting */
+            background-attachment: fixed; /* Ensures gradient covers full scrollable page */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-1 md:flex md:items-center md:gap-12">
+                    <span class="text-2xl font-bold">FitVerse</span>
+                </div>
+
+                <div class="md:flex md:items-center md:gap-12">
+                    <nav aria-label="Global" class="hidden md:block">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="aboutus.html"> About Us</a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="#features"> Features </a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="contact.html"> Contact Us</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="flex items-center gap-4">
+                        <div class="sm:flex sm:gap-4">
+                            <a
+                                class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-teal-700"
+                                href="form.html"
+                            >
+                                 Get Started
+                            </a>
+                        </div>
+
+                        <div class="block md:hidden">
+                            <button
+                                class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                                aria-label="Toggle menu"
+                            >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 sm:py-24 lg:py-32">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:grid md:grid-cols-2 md:items-center md:gap-8">
+                <div class="max-w-prose text-left">
+                    <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl leading-tight">
+                        Your Personalized
+                        <strong class="text-teal-600">Fitness Journey</strong>
+                        Starts Here.
+                    </h1>
+
+                    <p class="mt-4 text-base text-gray-700 sm:text-lg/relaxed leading-relaxed">
+                        Unleash your potential with AI-driven exercises, tailored diets, and expert recommendations designed just for you. Welcome to the FitVerse.
+                    </p>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a
+                            class="inline-block rounded-lg bg-teal-600 px-6 py-3 text-lg font-semibold text-white shadow-lg transition-colors hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                            href="form.html"
+                        >
+                            Get Started
+                        </a>
+                        <a
+                            class="inline-block rounded-lg border-2 border-gray-300 px-6 py-3 text-lg font-semibold text-gray-700 shadow-md transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+                            href="aboutus.html"
+                        >
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <img src="/frontend/photos/logo-new.png" alt="Logo" class="h-200 w-200 object-contain" />
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Features Section -->
+     <section id="features" class="py-16 sm:py-24 lg:py-32">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-12">
+            Key Benefits of <span class="text-teal-600">FitVerse</span>
+        </h2>
+        <div class="flex flex-wrap justify-center mt-6 gap-5"> <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 w-full sm:w-72 transition hover:shadow-lg">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">🎯 Personalized Plans</h3>
+                <img src="photos/c.jpeg" alt="Health Decisions" class="rounded-lg shadow-sm w-full h-40 object-cover mb-4">
+                <p class="mt-2 text-gray-700 text-sm">  No more one-size-fits-all routines. FitVerse analyzes your age, weight, health, and fitness goals to create a plan that's made just for you — whether you're starting out or scaling up.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 w-full sm:w-72 transition hover:shadow-lg">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">🧬 Health-Aware Guidance</h3>
+                <img src="photos/a.jpeg" alt="Financial Planning" class="rounded-lg shadow-sm w-full h-40 object-cover mb-4">
+                <p class="mt-2 text-gray-700 text-sm">Suffering from diabetes or hypertension? FitVerse factors in your medical conditions to avoid risky exercises and suggest alternatives that are both safe and effective.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 w-full sm:w-72 transition hover:shadow-lg">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Access Anywhere, Anytime</h3>
+                <img src="photos/b.jpeg" alt="Life Satisfaction" class="rounded-lg shadow-sm w-full h-40 object-cover mb-4">
+                <p class="mt-2 text-gray-700 text-sm">Whether you're at home, in the gym, or on the move — FitVerse works seamlessly across devices. No login required. Just open your browser and you're ready to go.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100 w-full sm:w-72 transition hover:shadow-lg">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">🧠 AI-Powered Precision</h3>
+                <img src="photos/d.jpeg" alt="Family and Legacy Planning" class="rounded-lg shadow-sm w-full h-40 object-cover mb-4">
+                <p class="mt-2 text-gray-700 text-sm"> Trained on real health and fitness data, our machine learning model delivers evidence-based suggestions — so you're not just guessing, you're progressing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Progress counter section-->
+<!-- Accuracy Counter Section - Enhanced UI -->
+       <section
+  class="w-full py-16 bg-white group"
+  onmouseenter="startCounter()"
+>
+  <div class="max-w-5xl mx-auto text-center"> <!-- Changed from max-w-xl to max-w-5xl -->
+    <h2 class="text-3xl font-bold text-teal-600 mb-6">Experience the precision of FitVerse!</h2>
+    <h3 class="text-2xl text-wrap text-teal-600 mx-auto max-w-screen-lg mb-10">Our advanced machine learning model consistently delivers highly accurate personalized fitness plans. We're dedicated to continuous innovation, ensuring you receive the most effective and reliable recommendations to achieve your health and wellness goals</h3>
+
+    <div class="text-5xl font-bold text-teal-600" id="counter">0%</div>
+
+    <div class="w-full h-4 mt-4 bg-gray-200 rounded-full overflow-hidden">
+      <div id="progressBar" class="h-full bg-teal-600  transition-all duration-100 ease-out" style="width: 0%;"></div>
+    </div>
+  </div>
+</section>
+  <!-- Testimonials Section -->
+     <!-- Testimonials Section -->
+        <section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white rounded-lg shadow-xl mx-auto max-w-screen-lg my-10">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-12">
+                Hear from Our <span class="text-teal-600">FitVerse Users</span>
+            </h2>
+            <p class="text-center text-gray-700 text-lg mb-12 max-w-2xl mx-auto">
+                Discover how real individuals have transformed their fitness journeys with the personalized guidance of FitVerse.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100 transition hover:shadow-lg flex flex-col items-center text-center">
+                    <img
+                         src="https://png.pngtree.com/png-vector/20231019/ourlarge/pngtree-user-profile-avatar-png-image_10211467.png"
+                        alt="tejas avatar"
+                        class="size-20 rounded-full object-cover mb-4 shadow-sm"
+                    />
+                    <h3 class="font-bold text-xl text-gray-900">Tejasav Saxena</h3>
+                    <p class="text-teal-600 text-sm mb-4">Student</p>
+                    <p class="text-gray-700 text-base italic">
+                        "FitVerse has truly revolutionized my fitness journey. The tailored workout plans and insightful tools have helped me achieve my goals far more efficiently than I ever thought possible."
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100 transition hover:shadow-lg flex flex-col items-center text-center">
+                    <img
+                        src="https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_1280.png"
+                        alt="jyoti avatar"
+                        class="size-20 rounded-full object-cover mb-4 shadow-sm"
+                    />
+                    <h3 class="font-bold text-xl text-gray-900">Jyoti Singh</h3>
+                    <p class="text-teal-600 text-sm mb-4">Nutrition Enthusiast</p>
+                    <p class="text-gray-700 text-base italic">
+                        "The personalized nutrition guides and meal planning features within FitVerse have been incredibly valuable, significantly enhancing my overall health and well-being."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100 transition hover:shadow-lg flex flex-col items-center text-center">
+                    <img
+                        src="https://tse3.mm.bing.net/th/id/OIP.ZZf5ANaOGgdbBM-ot_12FgHaHa?pid=Api&P=0&h=180"
+                        alt="swati avatar"
+                        class="size-20 rounded-full object-cover mb-4 shadow-sm"
+                    />
+                    <h3 class="font-bold text-xl text-gray-900">Swati Singh</h3>
+                    <p class="text-teal-600 text-sm mb-4">Fitness Trainer</p>
+                    <p class="text-gray-700 text-base italic">
+                        "As a professional fitness trainer, I confidently rely on FitVerse's precise and current tools and calculators. They are essential for helping my clients achieve their diverse fitness objectives."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- Footer -->
+     <footer class="bg-gray-900 text-white py-12">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">FitVerse</h3>
+                    <p class="text-gray-300 mb-4">
+                        Your personalized fitness journey starts here. AI-driven exercises, tailored diets, 
+                        and expert recommendations designed just for you.
+                    </p>
+                
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Home</a></li>
+                        <li><a href="form.html" class="hover:text-teal-400 transition">Get Started</a></li>
+                        <li><a href="aboutus.html" class="hover:text-teal-400 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="contact.html" class="hover:text-teal-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 FitVerse. All rights reserved. Your personalized fitness journey starts here.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script>
+  let started = false;
+
+  function startCounter() {
+    if (started) return;
+    started = true;
+
+    let count = 0;
+    const target = 95;
+    const speed = 20;
+    const counter = document.getElementById("counter");
+    const progressBar = document.getElementById("progressBar");
+
+    const updateCounter = () => {
+      if (count <= target) {
+        counter.textContent = count + "%";
+        progressBar.style.width = count + "%";
+        count++;
+        setTimeout(updateCounter, speed);
+      }
+    };
+
+    updateCounter();
+  }
+</script>
+
+
+</body>
+</html>

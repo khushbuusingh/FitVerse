@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About FitVerse - Your Personalized Fitness Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom gradient background */
+        body {
+            background: linear-gradient(to bottom right,#bfdbfe, #f0f9ff, #ffffff); /* Light blues, slightly shifting */
+            background-attachment: fixed; /* Ensures gradient covers full scrollable page */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-1 md:flex md:items-center md:gap-12">
+                    <span class="text-2xl font-bold">FitVerse</span>
+                </div>
+
+                <div class="md:flex md:items-center md:gap-12">
+                    <nav aria-label="Global" class="hidden md:block">
+                        <ul class="flex items-center gap-6 text-sm">
+                             <li><a class="text-gray-600 transition hover:text-teal-600" href="index.html">Home </a></li>
+                            <li><a class="text-gray-600 font-bold transition hover:text-teal-600" href="aboutus.html"> About Us</a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="index.html"> Features </a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="contact.html"> Contact Us</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="flex items-center gap-4">
+                        <div class="sm:flex sm:gap-4">
+                            <a
+                                class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-teal-700"
+                                href="form.html"
+                            >
+                                 Get Started
+                            </a>
+                        </div>
+
+                        <div class="block md:hidden">
+                            <button
+                                class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                                aria-label="Toggle menu"
+                            >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About Us Content Section -->
+    <main class="flex-grow flex items-center justify-center py-16 sm:py-24 lg:py-32">
+        <section class="bg-white rounded-lg shadow-xl mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8 p-8 sm:p-10 lg:p-12 w-full text-gray-900">
+            <h1 class="text-4xl font-extrabold text-center text-gray-900 sm:text-5xl mb-12">
+                About <span class="text-teal-600">FitVerse</span>
+            </h1>
+
+            <div class="prose max-w-none text-gray-700 leading-relaxed text-lg">
+                <p class="mb-6">
+                    Welcome to FitVerse, your ultimate companion on the journey to a healthier, stronger, and happier you. In a world brimming with generic fitness advice, FitVerse stands out by offering truly personalized plans, powered by cutting-edge machine learning.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h2>
+                <p class="mb-6">
+                    Our mission is to democratize personalized fitness. We believe that everyone deserves a fitness and nutrition plan that is uniquely tailored to their body, goals, and lifestyle. By leveraging data science, we aim to eliminate guesswork and provide clear, actionable recommendations that lead to tangible results.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">How It Works</h2>
+                <p class="mb-6">
+                    FitVerse uses a sophisticated machine learning model, trained on a comprehensive dataset of fitness profiles and outcomes. When you provide your input features – such as age, sex, height, weight, BMI, health conditions, fitness level, and goals – our model analyzes this information to predict the most suitable:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mb-6 ml-4">
+                    <li>Exercises: Tailored workout routines designed for your body and objectives.</li>
+                    <li>Equipment: Recommendations for the right tools to maximize your training.</li>
+                    <li>Diet: Personalized dietary suggestions to fuel your body and support your goals.</li>
+                    <li>Recommendations: Holistic advice covering lifestyle, recovery, and overall well-being.</li>
+                </ul>
+                <p class="mb-6">
+                    This data-driven approach ensures that your plan is not just effective, but also safe and sustainable.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h2>
+                <p class="mb-6">
+                    We envision a future where personalized wellness is accessible to everyone. FitVerse is continuously evolving, with plans to incorporate more features, adapt to user feedback, and integrate with emerging health technologies to provide an even richer and more dynamic fitness experience. Join us in building a healthier future, one personalized plan at a time.
+                </p>
+
+                <div class="mt-8 text-center">
+                    <a
+                        href="form.html"
+                        class="inline-block rounded-lg bg-teal-600 px-8 py-3 text-xl font-semibold text-white shadow-lg transition-colors hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    >
+                        Get Your Personalized Plan Now!
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12 mt-auto">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">FitVerse</h3>
+                    <p class="text-gray-300 mb-4">
+                        Your personalized fitness journey starts here. AI-driven exercises, tailored diets,
+                        and expert recommendations designed just for you.
+                    </p>
+
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Home</a></li>
+                        <li><a href="form.html" class="hover:text-teal-400 transition">Get Started</a></li>
+                        <li><a href="aboutus.html" class="hover:text-teal-400 transition">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="contact.html" class="hover:text-teal-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 FitVerse. All rights reserved. Your personalized fitness journey starts here.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

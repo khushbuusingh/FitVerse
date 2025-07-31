@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitVerse - Get Your Plan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom gradient background */
+        body {
+            background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe, #bfdbfe); /* Light blues, slightly shifting */
+            background-attachment: fixed; /* Ensures gradient covers full scrollable page */
+            font-family: "Inter", sans-serif; /* Using Inter font */
+        }
+        /* Basic styling for loading spinner */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #0d9488; /* Teal */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block; /* To align with text if needed */
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-1 md:flex md:items-center md:gap-12">
+                    <a class="block text-teal-600" href="/">
+                        <span class="sr-only">Home</span>
+                        <span class="text-2xl font-bold">FitVerse</span>
+                    </a>
+                </div>
+
+                <div class="md:flex md:items-center md:gap-12">
+                    <nav aria-label="Global" class="hidden md:block">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="index.html">Home</a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="aboutus.html">About</a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="index.html">Features</a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="flex items-center gap-4">
+                        <div class="sm:flex sm:gap-4">
+                            <a
+                                class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-teal-700"
+                                href="/form"
+                            >
+                                Get Started
+                            </a>
+                        </div>
+
+                        <div class="block md:hidden">
+                            <button
+                                class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                                aria-label="Toggle menu"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="size-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col items-center justify-center">
+
+        <!-- New Hero Section for Form Page -->
+        <section class="py-16 sm:py-24 lg:py-32 text-center">
+            <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl leading-tight">
+                Your Path to <strong class="text-teal-600">Peak Performance</strong>
+            </h1>
+            <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                Fill out a few details and let FitVerse craft your personalized fitness and nutrition plan.
+            </p>
+           
+        </section>
+
+        <!-- Input Form Section -->
+        <section class="bg-white rounded-lg shadow-xl mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8 p-8 sm:p-10 lg:p-12 w-full my-10">
+            <h2 class="text-3xl font-bold text-center text-gray-900 sm:text-4xl mb-12">
+                Get Your Personalized <span class="text-teal-600">Fitness Plan</span>
+            </h2>
+
+            <!-- Form with JavaScript handling -->
+            <form id="fitnessForm" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Sex -->
+                <div class="col-span-full sm:col-span-1">
+                    <label for="sex" class="block text-sm font-medium text-gray-700 mb-2">Sex</label>
+                    <div class="flex items-center gap-4">
+                        <label class="flex items-center text-gray-700">
+                            <input type="radio" name="sex" value="Male" class="form-radio text-teal-600 focus:ring-teal-500 rounded-full" required>
+                            <span class="ml-2">Male</span>
+                        </label>
+                        <label class="flex items-center text-gray-700">
+                            <input type="radio" name="sex" value="Female" class="form-radio text-teal-600 focus:ring-teal-500 rounded-full" required>
+                            <span class="ml-2">Female</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Age -->
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="1"
+                        max="100"
+                        placeholder="e.g., 30"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                </div>
+
+                <!-- Height (in meters) -->
+                <div>
+                    <label for="height" class="block text-sm font-medium text-gray-700 mb-2">Height (m)</label>
+                    <input
+                        type="number"
+                        id="height"
+                        name="height"
+                        step="0.01"
+                        min="0.5"
+                        max="2.5"
+                        placeholder="e.g., 1.75"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                </div>
+
+                <!-- Weight (in kg) -->
+                <div>
+                    <label for="weight" class="block text-sm font-medium text-gray-700 mb-2">Weight (kg)</label>
+                    <input
+                        type="number"
+                        id="weight"
+                        name="weight"
+                        step="0.1"
+                        min="20"
+                        max="300"
+                        placeholder="e.g., 70.5"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                </div>
+
+                <!-- BMI -->
+                <div>
+                    <label for="bmi" class="block text-sm font-medium text-gray-700 mb-2">BMI</label>
+                    <input
+                        type="number"
+                        id="bmi"
+                        name="bmi"
+                        step="0.01"
+                        min="10"
+                        max="50"
+                        placeholder="e.g., 22.9"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                </div>
+
+                <!-- Hypertension -->
+                <div class="col-span-full sm:col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Hypertension</label>
+                    <div class="flex items-center gap-4">
+                        <label class="flex items-center text-gray-700">
+                            <input type="radio" name="hypertension" value="Yes" class="form-radio text-teal-600 focus:ring-teal-500 rounded-full" required>
+                            <span class="ml-2">Yes</span>
+                        </label>
+                        <label class="flex items-center text-gray-700">
+                            <input type="radio" name="hypertension" value="No" class="form-radio text-teal-600 focus:ring-teal-500 rounded-full" required>
+                            <span class="ml-2">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Diabetes -->
+                <div class="col-span-full sm:col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Diabetes</label>
+                    <div class="flex items-center gap-4">
+                        <label class="flex items-center text-gray-700">
+                            <input type="radio" name="diabetes" value="Yes" class="form-radio text-teal-600 focus:ring-teal-500 rounded-full" required>
+                            <span class="ml-2">Yes</span>
+                        </label>
+                        <label class="flex items-center text-gray-700">
+                            <input type="radio" name="diabetes" value="No" class="form-radio text-teal-600 focus:ring-teal-500 rounded-full" required>
+                            <span class="ml-2">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Level -->
+                <div>
+                    <label for="level" class="block text-sm font-medium text-gray-700 mb-2">Fitness Level</label>
+                    <select
+                        id="level"
+                        name="level"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                        <option value="">Select your level</option>
+                        <option value="Underweight">Underweight</option>
+                        <option value="Normal Weight">Normal Weight</option>
+                        <option value="Overweight">Overweight</option>
+                        <option value="Obuse">Obuse</option>
+                    </select>
+                </div>
+
+                <!-- Fitness Goal -->
+                <div>
+                    <label for="fitness_goal" class="block text-sm font-medium text-gray-700 mb-2">Fitness Goal</label>
+                    <select
+                        id="fitness_goal"
+                        name="fitness_goal"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                        <option value="">Select your goal</option>
+                        <option value="Weight Gain">Weight Gain</option>
+                        <option value="Weight Loss">Weight Loss</option>
+                        <option value="Muscular Gain">Muscular Gain</option>
+                        <option value="Cardio Fitness">Cardio Fitness</option>
+                        <option value="Overall Health">Overall Health</option>
+                    </select>
+                </div>
+
+                <!-- Fitness Type -->
+                <div>
+                    <label for="fitness_type" class="block text-sm font-medium text-gray-700 mb-2">Fitness Type</label>
+                    <select
+                        id="fitness_type"
+                        name="fitness_type"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-2.5"
+                        required
+                    >
+                        <option value="">Select fitness type</option>
+                        <option value="Muscular Fitness">Muscular Fitness</option>
+                        <option value="Cardio Fitness">Cardio Fitness</option>
+                        <option value="Flexibility">Flexibility</option>
+                        <option value="Strength Training">Strength Training</option>
+                        <option value="Endurance">Endurance</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-span-full flex justify-center mt-6">
+                    <button
+                        type="submit"
+                        id="submitButton"
+                        class="inline-block rounded-lg bg-teal-600 px-8 py-3 text-xl font-semibold text-white shadow-lg transition-colors hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    >
+                        Get My Plan
+                    </button>
+                    <!-- Loading indicator -->
+                    <div id="loadingIndicator" class="hidden ml-4 flex items-center text-gray-700">
+                        <div class="loader"></div>
+                        <span class="ml-2">Loading...</span>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Prediction Results Section -->
+            <div id="predictionResultsContainer" class="hidden mt-12 p-8 bg-white rounded-lg shadow-xl border border-teal-200">
+                <h3 class="text-2xl font-bold text-center text-teal-800 mb-8">Your Personalized Fitness Plan</h3>
+                <div id="predictionResultsContent" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-gray-800 leading-relaxed">
+                    <!-- Results will be dynamically injected here -->
+                </div>
+                <div class="mt-10 text-center">
+                    <button
+                        id="getAnotherPlanBtn"
+                        class="inline-block rounded-lg bg-teal-600 px-8 py-3 text-xl font-semibold text-white shadow-lg transition-colors hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    >
+                        Get Another Plan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error Message Section -->
+            <div id="errorMessageContainer" class="hidden mt-6 p-4 bg-red-50 rounded-lg border border-red-200 text-red-700">
+                <strong class="font-semibold">Error:</strong> <span id="errorMessageText"></span>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Optional: Add a footer here -->
+      <footer class="bg-gray-900 text-white py-12 mt-auto">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">FitVerse</h3>
+                    <p class="text-gray-300 mb-4">
+                        Your personalized fitness journey starts here. AI-driven exercises, tailored diets,
+                        and expert recommendations designed just for you.
+                    </p>
+
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Home</a></li>
+                        <li><a href="form.html" class="hover:text-teal-400 transition">Get Started</a></li>
+                        <li><a href="aboutus.html" class="hover:text-teal-400 transition">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="contact.html" class="hover:text-teal-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 FitVerse. All rights reserved. Your personalized fitness journey starts here.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const fitnessForm = document.getElementById('fitnessForm');
+        const submitButton = document.getElementById('submitButton');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const predictionResultsContainer = document.getElementById('predictionResultsContainer');
+        const predictionResultsContent = document.getElementById('predictionResultsContent');
+        const errorMessageContainer = document.getElementById('errorMessageContainer');
+        const errorMessageText = document.getElementById('errorMessageText');
+
+        // Function to show loading indicator
+        function showLoading() {
+            submitButton.disabled = true; // Disable button during loading
+            loadingIndicator.classList.remove('hidden');
+            predictionResultsContainer.classList.add('hidden'); // Hide previous results
+            errorMessageContainer.classList.add('hidden'); // Hide previous errors
+        }
+
+        // Function to hide loading indicator
+        function hideLoading() {
+            submitButton.disabled = false; // Re-enable button
+            loadingIndicator.classList.add('hidden');
+        }
+
+        // Function to display results with enhanced UI
+        function displayResults(result) {
+            let htmlContent = "";
+            const icons = {
+                "Exercises": "💪", // Biceps
+                "Equipment": "🏋️", // Person Lifting Weights
+                "Diet": "🍎",      // Red Apple
+                "Recommendation": "💡" // Lightbulb
+            };
+
+            for (const key in result) {
+                if (result.hasOwnProperty(key)) {
+                    const icon = icons[key] || "✨"; // Default icon if not found
+                    htmlContent += `
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col">
+                            <h4 class="text-xl font-bold text-teal-700 mb-3 flex items-center">
+                                <span class="text-3xl mr-3">${icon}</span> ${key}
+                            </h4>
+                            <p class="text-gray-800 leading-relaxed">${result[key]}</p>
+                        </div>
+                    `;
+                }
+            }
+            predictionResultsContent.innerHTML = htmlContent;
+            predictionResultsContainer.classList.remove('hidden'); // Show the results container
+            // Scroll to results
+            predictionResultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Function to display errors
+        function displayError(message) {
+            errorMessageText.textContent = message;
+            errorMessageContainer.classList.remove('hidden'); // Show the error container
+            predictionResultsContainer.classList.add('hidden'); // Hide results if an error occurs
+            // Scroll to error
+            errorMessageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        fitnessForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            showLoading(); // Show loading indicator
+
+            const formData = new FormData(this);
+            const data = {};
+            // Collect form data, ensuring numerical inputs are parsed as numbers
+            for (const [key, value] of formData.entries()) {
+                if (['age', 'height', 'weight', 'bmi'].includes(key)) {
+                    data[key] = parseFloat(value); // Use parseFloat for decimals, parseInt for age
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            console.log("Form Data Submitted:", data);
+
+            // Fetch request to your Flask backend
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.error || `Server error: ${response.status} ${response.statusText}`);
+                    });
+                }
+                return response.json();
+            })
+            .then(result => {
+                console.log('Prediction result:', result);
+                displayResults(result); // Display results on the page
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                displayError(`An error occurred: ${error.message || 'Please try again.'}`); // Display error on the page
+            })
+            .finally(() => {
+                hideLoading(); // Hide loading indicator regardless of success or failure
+            });
+        });
+
+        // "Get Another Plan" button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const getAnotherPlanBtn = document.getElementById('getAnotherPlanBtn');
+            if (getAnotherPlanBtn) {
+                getAnotherPlanBtn.addEventListener('click', function() {
+                    predictionResultsContainer.classList.add('hidden'); // Hide results
+                    fitnessForm.reset(); // Clear form fields
+                    // Scroll back to the top of the form section
+                    fitnessForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+
+            // Populate "Level" dropdown based on BMI (optional but good UX)
+            document.getElementById('bmi').addEventListener('input', function() {
+                const bmiInput = parseFloat(this.value);
+                const levelSelect = document.getElementById('level');
+
+                if (isNaN(bmiInput) || bmiInput === 0) {
+                    levelSelect.value = ""; // Reset if input is invalid
+                    return;
+                }
+
+                let level = "";
+                if (bmiInput < 18.5) {
+                    level = "Underweight";
+                } else if (bmiInput >= 18.5 && bmiInput < 25) {
+                    level = "Normal Weight";
+                } else if (bmiInput >= 25 && bmiInput < 30) {
+                    level = "Overweight";
+                } else if (bmiInput >= 30) {
+                    level = "Obuse";
+                }
+                levelSelect.value = level;
+            });
+
+            // Ensure all select elements have a default empty option selected on load
+            document.getElementById('level').value = "";
+            document.getElementById('fitness_goal').value = "";
+            document.getElementById('fitness_type').value = "";
+        });
+    </script>
+
+</body>
+</html>

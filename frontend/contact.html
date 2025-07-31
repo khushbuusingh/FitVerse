@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FitVerse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom gradient background */
+        body {
+            background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe, #bfdbfe); /* Light blues, slightly shifting */
+            background-attachment: fixed; /* Ensures gradient covers full scrollable page */
+            font-family: "Inter", sans-serif; /* Using Inter font */
+        }
+        /* Loading spinner for form submission (kept for general styling, but not used by mailto form) */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0d9488;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-1 md:flex md:items-center md:gap-12">
+                    <a class="block text-teal-600" href="index.html">
+                        <span class="sr-only">Home</span>
+                        <span class="text-2xl font-bold">FitVerse</span>
+                    </a>
+                </div>
+
+                <div class="md:flex md:items-center md:gap-12">
+                    <nav aria-label="Global" class="hidden md:block">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="index.html"> Home </a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="aboutus.html"> About Us</a></li>
+                            <li><a class="text-gray-600 transition hover:text-teal-600" href="index.html"> Features </a></li>
+                            <li><a class="text-teal-600 font-bold" href="contact.html"> Contact Us</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="flex items-center gap-4">
+                        <div class="sm:flex sm:gap-4">
+                            <a
+                                class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-teal-700"
+                                href="form.html"
+                            >
+                                Get Started
+                            </a>
+                        </div>
+
+                        <div class="block md:hidden">
+                            <button
+                                class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                                aria-label="Toggle menu"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="size-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-24 lg:py-32">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl">
+                    Get in <span class="text-teal-600">Touch</span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+                    Have questions about your fitness journey? Need support with FitVerse?
+                    We're here to help you achieve your health and wellness goals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+      <!-- Contact Methods Section -->
+    <section class="py-16">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <!--
+                Changed:
+                - Removed `md:grid-cols-2` from the outer grid if there's only one item.
+                - Used `flex justify-center` on the container to center the single card.
+                - Added `max-w-sm` to the card to give it a defined width for centering.
+            -->
+            <div class="flex justify-center"> <!-- Use flexbox to center the single item -->
+                <!-- Email Contact -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 text-center transition hover:shadow-xl w-full max-w-sm">
+                    <div class="mx-auto w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Email Us Directly</h3>
+                    <p class="text-gray-600 mb-4">For direct inquiries, feedback, or support, send us an email.</p>
+                    <a href="mailto:khushbusingh.9700@gmail.com?subject=FitVerse Inquiry" class="text-teal-600 font-semibold hover:text-teal-700 transition">
+                        khushbusingh.9700@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-xl p-8 sm:p-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                        Send Us a <span class="text-teal-600">Message</span>
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Fill out the form below and it will open your email client with your message drafted.
+                        We'll get back to you as soon as possible.
+                    </p>
+                </div>
+
+                <form id="contactForm" action="mailto:khushbusingh.9700@gmail.com" method="POST" enctype="text/plain" class="space-y-6">
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <!-- First Name -->
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                                First Name *
+                            </label>
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="First Name"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+                                placeholder="Your first name"
+                            >
+                        </div>
+
+                        <!-- Last Name -->
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                                Last Name *
+                            </label>
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="Last Name"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+                                placeholder="Your last name"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                Your Email Address *
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="Email"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+                                placeholder="your.email@example.com"
+                            >
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                Phone Number
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="Phone"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+                                placeholder="+1 (555) 123-4567"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                            Subject *
+                        </label>
+                        <select
+                            id="subject"
+                            name="Subject"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+                        >
+                            <option value="">Select a subject</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Fitness Questions">Fitness Questions</option>
+                            <option value="Feedback & Suggestions">Feedback & Suggestions</option>
+                            <option value="Partnership Opportunities">Partnership Opportunities</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                            Message *
+                        </label>
+                        <textarea
+                            id="message"
+                            name="Message"
+                            rows="6"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition resize-y"
+                            placeholder="Tell us how we can help you..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button
+                            type="submit"
+                            class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-200 shadow-lg"
+                        >
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white/50">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+                    Frequently Asked <span class="text-teal-600">Questions</span>
+                </h2>
+                <p class="text-gray-600">
+                    Quick answers to common questions about FitVerse
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(1)">
+                        <span class="font-medium text-gray-900">How does FitVerse create personalized fitness plans?</span>
+                        <svg id="faq-icon-1" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            FitVerse uses advanced machine learning algorithms trained on health and fitness data to analyze your personal information including age, weight, height, BMI, health conditions, fitness level, and goals. Based on this analysis, it generates customized exercise routines, equipment recommendations, diet plans, and overall fitness recommendations tailored specifically to your needs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(2)">
+                        <span class="font-medium text-gray-900">Is FitVerse suitable for people with health conditions?</span>
+                        <svg id="faq-icon-2" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            Yes! FitVerse is designed to be health-aware and takes into account medical conditions like diabetes and hypertension when creating your fitness plan. It avoids recommending exercises that could be risky for your specific health conditions and suggests safe, effective alternatives. However, always consult with your healthcare provider before starting any new fitness program.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(3)">
+                        <span class="font-medium text-gray-900">Do I need to create an account to use FitVerse?</span>
+                        <svg id="faq-icon-3" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            No account creation is required! FitVerse is designed for immediate access - simply visit our website, fill out the fitness form with your information, and get your personalized recommendations instantly. This makes it convenient to use anytime, anywhere, without the hassle of registration or login processes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(4)">
+                        <span class="font-medium text-gray-900">How often should I update my fitness plan?</span>
+                        <svg id="faq-icon-4" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-content-4" class="hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            We recommend updating your fitness plan every 4-6 weeks or whenever there are significant changes in your weight, fitness level, health status, or goals. As you progress in your fitness journey, your needs will evolve, and FitVerse can adapt to provide new challenges and recommendations to keep you moving forward.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-auto">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">FitVerse</h3>
+                    <p class="text-gray-300 mb-4">
+                        Your personalized fitness journey starts here. AI-driven exercises, tailored diets,
+                        and expert recommendations designed just for you.
+                    </p>
+
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Home</a></li>
+                        <li><a href="form.html" class="hover:text-teal-400 transition">Get Started</a></li>
+                        <li><a href="aboutus.html" class="hover:text-teal-400 transition">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-teal-400 transition">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="contact.html" class="hover:text-teal-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 FitVerse. All rights reserved. Your personalized fitness journey starts here.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // FAQ toggle functionality
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Form validation enhancements (simplified as mailto form doesn't need complex JS submission)
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.classList.add('border-red-300');
+                        this.classList.remove('border-gray-300');
+                    } else {
+                        this.classList.remove('border-red-300');
+                        this.classList.add('border-gray-300');
+                    }
+                });
+
+                input.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        this.classList.remove('border-red-300');
+                        this.classList.add('border-gray-300');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
